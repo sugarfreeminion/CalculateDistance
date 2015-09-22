@@ -1,0 +1,14 @@
+OBJS = CalculateDistance.o
+CC = g++
+DEBUG = -g
+CFLAGS = -Wall -c $(DEBUG)
+LFLAGS = -Wall $(DEBUG)
+
+CalculateDistance : $(OBJS)
+		   $(CC) $(LFLAGS) $(OBJS) -o CalculateDistance
+
+CalculateDistance.o : CalculateDistance.cpp
+			 $(CC) $(CFLAGS) CalculateDistance.cpp
+			 
+clean:
+	\rm *.o *~ CalculateDistance
